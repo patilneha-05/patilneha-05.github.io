@@ -1,0 +1,276 @@
+{
+  "meta": {
+    "title": "Neha Patil — AI/ML & Web Developer",
+    "description": "Portfolio of Neha R. Patil — AI/ML specialist and full-stack web developer from Kolhapur, India.",
+    "copyright": "© 2026 Neha Patil. All rights reserved."
+  },
+  "person": {
+    "name": "Neha Patil",
+    "fullName": "Neha R. Patil",
+    "location": "Kolhapur, Maharashtra, India",
+    "email": "patilneha0518@gmail.com",
+    "phone": "+91 98348 46442",
+    "phoneRaw": "+919834846442",
+    "linkedin": "https://www.linkedin.com/in/patilneha05/",
+    "linkedinDisplay": "linkedin.com/in/patilneha05",
+    "github": "https://github.com/",
+    "githubDisplay": "GitHub Profile",
+    "cvFile": "./cv/CV-Neha Patil.pdf",
+    "available": true,
+    "availabilityText": "Available for Opportunities"
+  },
+  "hero": {
+    "tags": ["#AI / ML", "#Web Development", "#Python", "#React.js", "#Blockchain"],
+    "bio": "B.Tech student specializing in AI & ML, passionate about building practical, user-focused technology solutions. From blockchain escrow systems to LMS platforms — I craft software that solves real-world problems.",
+    "stats": [
+      { "value": "8.38", "label": "CGPA — B.Tech" },
+      { "value": "38+",  "label": "Certificates" },
+      { "value": "3+",   "label": "Projects" }
+    ],
+    "marqueeItems": [
+      "AI / Machine Learning", "Web Development", "Blockchain",
+      "Python", "React.js", "Node.js", "Flask", "MySQL", "MongoDB", "Next.js"
+    ]
+  },
+  "about": {
+    "heading": "Passionate &<br>Driven Developer",
+    "paragraphs": [
+      "I'm a third-year B.Tech student in Computer Science Engineering with a specialization in <strong>Artificial Intelligence and Machine Learning</strong> at DKTE Society's Textile & Engineering Institute, Ichalkaranji.",
+      "My journey started with a Diploma in Computer Science (87.54% aggregate) and has grown through hands-on internships at Qualitas Techno Solutions and Sunbeam Infotech. I'm passionate about bridging the gap between cutting-edge AI/ML research and practical web applications that make a real difference."
+    ],
+    "highlights": [
+      { "value": "8.38",   "label": "Current CGPA" },
+      { "value": "87.54%", "label": "Diploma Score" },
+      { "value": "2",      "label": "Internships" },
+      { "value": "1",      "label": "Publication" }
+    ]
+  },
+  "skills": {
+    "languages": [
+      { "name": "Python",      "percent": 90 },
+      { "name": "JavaScript",  "percent": 85 },
+      { "name": "C / C++",     "percent": 80 },
+      { "name": "Java",        "percent": 70 },
+      { "name": "SQL",         "percent": 80 },
+      { "name": "HTML & CSS",  "percent": 92 }
+    ],
+    "frameworks": ["React.js", "Next.js", "Node.js", "Express.js", "Python Flask", "Django", "Bootstrap", "Tailwind CSS"],
+    "databases": ["MySQL", "MongoDB"],
+    "tools": ["Git", "GitHub", "VS Code", "Postman", "Google Colab"],
+    "softSkills": ["Communication", "Time Management", "Teamwork", "Problem Solving"]
+  },
+  "experience": [
+    {
+      "period": "Jun – Jul 2023",
+      "role": "Web Development Intern",
+      "company": "Qualitas Techno Solutions",
+      "location": "Kolhapur",
+      "logo": "QTS",
+      "points": [
+        "6-week industrial training in web development with HTML, CSS, JavaScript, Node.js, and Express.js.",
+        "Built responsive web applications integrating databases and RESTful APIs.",
+        "Strengthened skills in Git version control and deployment practices."
+      ],
+      "tags": ["HTML/CSS", "JavaScript", "Node.js", "Express.js", "Git"]
+    },
+    {
+      "period": "Dec 2025",
+      "role": "Web Development Intern",
+      "company": "Sunbeam Infotech",
+      "location": "Pune",
+      "logo": "SI",
+      "points": [
+        "1-month training using HTML, CSS, JavaScript, ReactJS, and Python Flask.",
+        "Developed responsive web applications with databases and APIs.",
+        "Improved Git version control and deployment workflows in a professional team environment."
+      ],
+      "tags": ["React.js", "Python", "Flask", "MySQL", "Git"]
+    }
+  ],
+  "education": [
+    {
+      "period": "2024 – Present",
+      "degree": "B.Tech — Computer Science & Engineering",
+      "specialization": "Artificial Intelligence & Machine Learning",
+      "institution": "DKTE Society's Textile & Engineering Institute, Ichalkaranji",
+      "score": "8.38",
+      "scoreLabel": "Current CGPA",
+      "icon": "graduation-cap"
+    },
+    {
+      "period": "2021 – 2024",
+      "degree": "Diploma — Computer Science & Engineering",
+      "specialization": null,
+      "institution": "DKTE's Yashwantrao Chavan Polytechnic, Ichalkaranji",
+      "score": "87.54%",
+      "scoreLabel": "Aggregate Score",
+      "icon": "book-open"
+    }
+  ],
+  "projects": [
+    {
+      "number": "01",
+      "year": "2026",
+      "category": "Blockchain",
+      "title": "TrustChain",
+      "subtitle": "An Escrow System",
+      "icon": "link",
+      "description": "A blockchain-based decentralized escrow platform leveraging Polygon smart contracts for automated payment holding and release — enabling trustless peer-to-peer transactions without intermediaries.",
+      "points": [
+        "Polygon smart contracts for automated payment holding & release",
+        "Full-stack with Node.js, MongoDB & Next.js for responsive P2P transaction management"
+      ],
+      "tags": ["Next.js", "Node.js", "MongoDB", "Polygon", "Solidity"],
+      "link": null
+    },
+    {
+      "number": "02",
+      "year": "2025",
+      "category": "Full-Stack",
+      "title": "Sunbeam Online Course Portal",
+      "subtitle": "Learning Management System",
+      "icon": "monitor",
+      "description": "A secure and scalable full-stack LMS for managing online courses and student enrollments. Features role-based access, JWT authentication, and interactive video-based learning with real-time UI updates.",
+      "points": [
+        "Role-based authentication (JWT) — separate portals for students & admins",
+        "Course enrollment, video-based learning & profile management",
+        "Responsive UI with dynamic content rendering and real-time updates"
+      ],
+      "tags": ["React.js", "Python Flask", "MySQL", "JWT"],
+      "link": null
+    },
+    {
+      "number": "03",
+      "year": "2024",
+      "category": "ERP / Research",
+      "title": "Acadx",
+      "subtitle": "An ERP System for Educational Institutions",
+      "icon": "layout-dashboard",
+      "description": "A scalable ERP solution for educational institutions built with Python, Django & MySQL. Published as a research paper in IJIRCCE — received positive user feedback for improving institutional productivity.",
+      "points": [
+        "Attendance & score management with mobile-friendly interface",
+        "Automated processes to improve productivity — published in IJIRCCE"
+      ],
+      "tags": ["Python", "Django", "MySQL", "HTML/CSS/JS", "Research Paper"],
+      "link": null
+    }
+  ],
+  "research": [
+    {
+      "journal": "IJIRCCE",
+      "label": "Published Research — IJIRCCE",
+      "title": "Acadx: An ERP System",
+      "description": "Research paper published in the International Journal of Innovative Research in Computer and Communication Engineering (IJIRCCE) detailing the design and implementation of Acadx — a scalable ERP solution for educational institutions.",
+      "status": "Published",
+      "link": null
+    }
+  ],
+  "featuredCertificates": [
+    {
+      "org": "Oracle",
+      "title": "Foundation of AI",
+      "description": "Artificial Intelligence fundamentals",
+      "icon": "cpu"
+    },
+    {
+      "org": "Google",
+      "title": "Generative AI",
+      "description": "Google GenAI certification",
+      "icon": "sparkles"
+    },
+    {
+      "org": "NPTEL",
+      "title": "Big Data Computing",
+      "description": "Data Science for Engineers",
+      "icon": "database"
+    },
+    {
+      "org": "MSME",
+      "title": "Android App Dev",
+      "description": "Government-certified training",
+      "icon": "smartphone"
+    }
+  ],
+  "contact": {
+    "heading": "Let's Work Together",
+    "subtext": "Whether it's a project, internship opportunity, or just a conversation about tech — I'd love to hear from you.",
+    "ctaHeading": "Open to Opportunities",
+    "ctaSubtext": "Internships, projects, collaborations — let's build something impactful together."
+  },
+  "certificates": {
+    "totalCount": 38,
+    "description": "A collection of 38 certificates spanning AI/ML, web development, programming, competitive achievements, and sports.",
+    "categories": [
+      { "key": "all",         "label": "All",          "count": 38 },
+      { "key": "competition", "label": "Competitions", "count": 7  },
+      { "key": "course",      "label": "Online Courses","count": 14 },
+      { "key": "programming", "label": "Programming",  "count": 6  },
+      { "key": "sports",      "label": "Sports",       "count": 5  },
+      { "key": "other",       "label": "Other",        "count": 6  }
+    ],
+    "list": [
+      { "category": "competition", "title": "Code Astra",          "org": "YCP — Coding Competition",    "pdf": "./pdf/ycp_codeAstra.pdf" },
+      { "category": "competition", "title": "Byte Battle",          "org": "YCP — Coding Competition",    "pdf": "./pdf/ycp_ByteBattle.pdf" },
+      { "category": "competition", "title": "Programmies",          "org": "SIT — Programming Contest",   "pdf": "./pdf/sit_programmies.pdf" },
+      { "category": "competition", "title": "Paper Presentation",   "org": "SIT — Technical Event",       "pdf": "./pdf/sit_paperPresentation.pdf" },
+      { "category": "competition", "title": "Coding Competition",   "org": "JJM — 2022",                  "pdf": "./pdf/JJM-codingCompition.pdf" },
+      { "category": "competition", "title": "I & AI 2.0",           "org": "DKTE — AI Event",             "pdf": "./pdf/dkte_I&AI2.0.pdf" },
+      { "category": "competition", "title": "QTS Certificate",      "org": "Technical Competition",       "pdf": "./pdf/qts.pdf" },
+
+      { "category": "course", "title": "Generative AI",             "org": "Google",                      "pdf": "./pdf/Google_GenAI.pdf" },
+      { "category": "course", "title": "Foundation of AI",          "org": "Oracle",                      "pdf": "./pdf/Oracle_FoundationOfAI.pdf" },
+      { "category": "course", "title": "Foundation of AI",          "org": "Oracle",                      "pdf": "./pdf/oracle_foundationOfAI(1).pdf" },
+      { "category": "course", "title": "Android App Development",   "org": "MSME — Government Certified", "pdf": "./pdf/MSME_androidAppDev.pdf" },
+      { "category": "course", "title": "Big Data Computing",        "org": "NPTEL",                       "pdf": "./pdf/Big Data Computing.pdf" },
+      { "category": "course", "title": "Selenium Testing",          "org": "Simplilearn",                 "pdf": "./pdf/simpleilearn_Selenium.pdf" },
+      { "category": "course", "title": "Python & AI",               "org": "Devtown × AWS — Jul 2023",   "pdf": "./pdf/devtownaws_python&AI.pdf" },
+      { "category": "course", "title": "Python & AI",               "org": "Devtown × Microsoft — Jul 2023", "pdf": "./pdf/devtown_python&AI_MS.pdf" },
+      { "category": "course", "title": "Frontend Development",      "org": "Devtown — Dec 2022",          "pdf": "./pdf/devtown_frontend.pdf" },
+      { "category": "course", "title": "Frontend Development",      "org": "Devtown × Google — Dec 2022", "pdf": "./pdf/devtown_frontend_google.pdf" },
+      { "category": "course", "title": "Instagram Clone",           "org": "Devtown — Dec 2022",          "pdf": "./pdf/devtown_instaCloning.pdf" },
+      { "category": "course", "title": "Instagram Clone",           "org": "Devtown × Microsoft — Jan 2023", "pdf": "./pdf/devtown_instaCloning-MS.pdf" },
+      { "category": "course", "title": "Instagram Clone",           "org": "Devtown × Google — Jan 2023", "pdf": "./pdf/devtown_instaCloning_google.pdf" },
+      { "category": "course", "title": "Microsoft Partner Certificate", "org": "Devtown × Microsoft — Dec 2022", "pdf": "./pdf/devtown_MS.pdf" },
+      { "category": "course", "title": "I-ASPIRE",                  "org": "WIT",                         "pdf": "./pdf/wit_IASPIRE.pdf" },
+
+      { "category": "programming", "title": "C Programming",        "org": "Language Certification",      "pdf": "./pdf/C -Certificate.pdf" },
+      { "category": "programming", "title": "C++ Programming",      "org": "Language Certification",      "pdf": "./pdf/CPP-Certificate.pdf" },
+      { "category": "programming", "title": "CSS",                  "org": "Language Certification",      "pdf": "./pdf/CSS-Certificate.pdf" },
+      { "category": "programming", "title": "Python",               "org": "Language Certification",      "pdf": "./pdf/PYTHON-Certificate.pdf" },
+      { "category": "programming", "title": "CCC Certification",    "org": "Computer Course Certificate", "pdf": "./pdf/CCC.pdf" },
+      { "category": "programming", "title": "English Typing",       "org": "Typing Speed Certification",  "pdf": "./pdf/TypingEnglish.pdf" },
+
+      { "category": "sports", "title": "Cricket",                   "org": "Sports Achievement — 2024",   "pdf": "./pdf/cricket_2024.pdf" },
+      { "category": "sports", "title": "Cricket",                   "org": "Sports Achievement — 2023",   "pdf": "./pdf/cricket _2023.pdf" },
+      { "category": "sports", "title": "Kabaddi",                   "org": "Sports Achievement — 2024",   "pdf": "./pdf/kabaddi_2024.pdf" },
+      { "category": "sports", "title": "Kho-Kho",                   "org": "Sports Achievement — 2024",   "pdf": "./pdf/kho-kho_2024.pdf" },
+      { "category": "sports", "title": "Relay Race",                "org": "Sports Achievement — 2024",   "pdf": "./pdf/Relay_2024.pdf" },
+
+      { "category": "other", "title": "Neha Rajgonda Patil",        "org": "Special Certificate",         "pdf": "./pdf/Neha Rajgonda Patil.pdf" },
+      { "category": "other", "title": "Certificate of Appreciation","org": "Appreciation — Nov 2022",     "pdf": "./pdf/certificate_of_appreciation.pdf" },
+      { "category": "other", "title": "Rotary Club — 10th",         "org": "Rotary Club Award",           "pdf": "./pdf/rotariClub-10th.pdf" },
+      { "category": "other", "title": "Certificate of Appreciation","org": "Appreciation Certificate",    "pdf": "./pdf/Neha Rajgonda Patil.pdf" },
+      { "category": "other", "title": "Merit Certificate",          "org": "Academic Merit",              "pdf": "./pdf/certificate_of_appreciation.pdf" },
+      { "category": "other", "title": "Participation Certificate",  "org": "Institute Certificate",       "pdf": "./pdf/rotariClub-10th.pdf" }
+    ]
+  },
+  "cv": {
+    "pdfFile": "./CV-Neha Patil.pdf",
+    "infoBar": [
+      "CV-Neha Patil.pdf",
+      "Kolhapur, India",
+      "patilneha0518@gmail.com",
+      "B.Tech — AI & ML — CGPA 8.38"
+    ]
+  },
+  "nav": {
+    "links": [
+      { "href": "#home",       "label": "Home" },
+      { "href": "#about",      "label": "About" },
+      { "href": "#skills",     "label": "Skills" },
+      { "href": "#experience", "label": "Experience" },
+      { "href": "#projects",   "label": "Projects" },
+      { "href": "#contact",    "label": "Contact" }
+    ]
+  }
+}
