@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neha Patil — AI/ML & Web Developer</title>
+  <meta name="description" content="Portfolio of Neha R. Patil — AI/ML specialist and full-stack web developer from Kolhapur, India." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Tailwind CSS (compiled output) -->
+  <link rel="stylesheet" href="./output.css" />
+
+  <style>
+    :root {
+      --color-bg:         #0a0a0a;
+      --color-surface:    #111111;
+      --color-surface2:   #1a1a1a;
+      --color-surface3:   #222222;
+      --color-accent:     #00d4c8;
+      --color-accent-dim: #00a89e;
+      --color-text:       #f0ede8;
+      --color-muted:      #6b7280;
+      --color-muted-2:    #9ca3af;
+      --color-border:     #2a2a2a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: 'Outfit', sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    /* ── Typography ── */
+    .font-display { font-family: 'Outfit', sans-serif; }
+
+    /* ── Hero Name ── */
+    .hero-name {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.8rem, 9vw, 7rem);
+      line-height: 1.0;
+    }
+    @media (min-width: 640px) {
+      .hero-name { white-space: nowrap; }
+      letter-spacing: -0.03em;
+    }
+
+    /* ── Section labels ── */
+    .section-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+    }
+
+    /* ── Accent btn ── */
+    .btn-accent {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--color-accent);
+      color: #0a0a0a;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.875rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-accent:hover {
+      background: var(--color-accent-dim);
+      transform: translateY(-2px);
+      box-shadow: 0 0 24px rgba(0,212,200,0.3);
+    }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--color-text);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
+      font-size: 0.875rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--color-border);
+      transition: border-color 0.2s, color 0.2s, transform 0.2s;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-outline:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      transform: translateY(-2px);
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 1rem;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    }
+    .card:hover {
+      border-color: rgba(0,212,200,0.3);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,212,200,0.15);
+      transform: translateY(-4px);
+    }
+
+    /* ── Nav ── */
+    #navbar {
+      transition: background 0.3s, backdrop-filter 0.3s, border-color 0.3s;
+    }
+    #navbar.scrolled {
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    /* ── Skill tags ── */
+    .skill-tag {
+      background: var(--color-surface2);
+      border: 1px solid var(--color-border);
+      color: var(--color-muted);
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .skill-tag:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+
+    /* ── Scroll-reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ── Marquee ── */
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 35s linear infinite;
+    }
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+
+    /* ── Mobile nav ── */
+    #mobile-nav {
+      transition: opacity 0.25s, transform 0.25s;
+    }
+    #mobile-nav.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-8px);
+    }
+    #mobile-nav.open {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+
+    /* ── Hero glow ── */
+    .hero-glow {
+      position: absolute;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 60%;
+      background: radial-gradient(ellipse, rgba(0,212,200,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ── Progress bar ── */
+    .progress-bar {
+      background: var(--color-surface2);
+      border-radius: 999px;
+      height: 4px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--color-accent), var(--color-accent-dim));
+      border-radius: 999px;
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 1.2s ease;
+    }
+    .progress-bar-fill.animated { transform: scaleX(1); }
+
+    /* ── Contact link ── */
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 0.75rem;
+      text-decoration: none;
+      color: var(--color-text);
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    }
+    .contact-link:hover {
+      border-color: var(--color-accent);
+      background: var(--color-surface2);
+      transform: translateX(4px);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ═══════════════════════════════════════════ NAVBAR ═══ -->
+  <nav id="navbar" class="fixed top-0 inset-x-0 z-50 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto flex items-center justify-between h-16 md:h-20">
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-2 group">
+        <span id="nav-logo" class="font-display font-semibold text-sm" style="color: var(--color-text);"></span>
+      </a>
+
+      <!-- Desktop nav -->
+      <ul id="desktop-nav-links" class="hidden md:flex items-center gap-1"></ul>
+
+      <!-- CTA + Hamburger -->
+      <div class="flex items-center gap-3">
+        <a id="nav-cv-btn" href="./cv/index.html" class="btn-accent hidden sm:inline-flex text-xs py-2 px-4">
+          <i data-lucide="file-text" class="w-3.5 h-3.5"></i> View CV
+        </a>
+        <button id="hamburger" class="md:hidden p-2 rounded-lg" style="color: var(--color-text);" aria-label="Toggle menu">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile nav -->
+    <div id="mobile-nav" class="hidden md:hidden absolute left-0 right-0 top-full mx-4 rounded-xl border p-4" style="background: var(--color-surface); border-color: var(--color-border);">
+      <ul id="mobile-nav-links" class="flex flex-col gap-1"></ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════ HERO ═══ -->
+  <section id="home" class="relative min-h-screen flex flex-col justify-center pt-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div class="hero-glow"></div>
+    <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(var(--color-border) 1px, transparent 1px), linear-gradient(90deg, var(--color-border) 1px, transparent 1px); background-size: 80px 80px; opacity: 0.3;"></div>
+
+    <div class="max-w-7xl mx-auto w-full relative z-10">
+      <!-- Availability badge -->
+      <div class="reveal flex items-center gap-2 mb-8">
+        <span class="w-2 h-2 rounded-full animate-pulse2" style="background: var(--color-accent);"></span>
+        <span id="hero-available" class="section-label"></span>
+      </div>
+
+      <!-- Name -->
+      <div class="overflow-hidden mb-4">
+        <h1 id="hero-name" class="hero-name reveal" style="color: var(--color-text);"></h1>
+      </div>
+
+      <!-- Tags row -->
+      <div id="hero-tags" class="reveal flex flex-wrap gap-2 mb-8" style="transition-delay: 0.1s;"></div>
+
+      <!-- Bio + stats -->
+      <div class="reveal flex flex-col lg:flex-row lg:items-end gap-8 lg:gap-16" style="transition-delay: 0.2s;">
+        <div class="max-w-lg">
+          <p id="hero-bio" class="text-base leading-relaxed mb-8" style="color: var(--color-muted-2);"></p>
+          <div class="flex flex-wrap gap-3">
+            <a id="hero-cv-btn" href="./cv/index.html" class="btn-accent">
+              <i data-lucide="file-text" class="w-4 h-4"></i> View CV
+            </a>
+            <a href="./certificates/index.html" class="btn-outline">
+              <i data-lucide="award" class="w-4 h-4"></i> Certificates
+            </a>
+            <a href="#contact" class="btn-outline">
+              <i data-lucide="mail" class="w-4 h-4"></i> Get in Touch
+            </a>
+          </div>
+        </div>
+
+        <!-- Mini stats -->
+        <div class="flex items-center gap-8 lg:ml-auto">
+          <div id="hero-stats" class="flex flex-col gap-4"></div>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div class="reveal mt-10 flex items-center gap-2" style="transition-delay: 0.3s; color: var(--color-muted);">
+        <i data-lucide="map-pin" class="w-4 h-4" style="color: var(--color-accent);"></i>
+        <span id="hero-location" class="text-sm"></span>
+      </div>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+      <i data-lucide="chevrons-down" class="w-5 h-5" style="color: var(--color-muted);"></i>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ MARQUEE ═══ -->
+  <div class="py-6 border-y overflow-hidden" style="border-color: var(--color-border);">
+    <div class="marquee-track" id="marquee-track"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ ABOUT ═══ -->
+  <section id="about" class="py-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col lg:flex-row gap-16 items-start">
+        <!-- Left -->
+        <div class="reveal-left w-full lg:w-72 flex-shrink-0">
+          <span class="section-label flex items-center gap-2 mb-6">
+            <span style="color: var(--color-accent);">✦</span> About Me
+          </span>
+          <h2 id="about-heading" class="font-display font-bold mb-6" style="font-size: clamp(2rem, 4vw, 2.75rem); color: var(--color-text); line-height: 1.1;"></h2>
+          <!-- Contact info -->
+          <div id="about-contact" class="flex flex-col gap-3"></div>
+        </div>
+
+        <!-- Right -->
+        <div class="reveal flex-1">
+          <div id="about-paragraphs" class="mb-10"></div>
+          <!-- Highlights grid -->
+          <div id="about-highlights" class="grid grid-cols-2 sm:grid-cols-4 gap-4"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ SKILLS ═══ -->
+  <section id="skills" class="py-24 px-4 sm:px-6 lg:px-8" style="background: var(--color-surface);">
+    <div class="max-w-7xl mx-auto">
+      <div class="reveal text-center mb-16">
+        <span class="section-label flex items-center justify-center gap-2 mb-4">
+          <span style="color: var(--color-accent);">✦</span> Skills &amp; Expertise
+        </span>
+        <h2 class="font-display font-bold" style="font-size: clamp(2rem, 4vw, 3rem); color: var(--color-text);">My Technical Stack</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <!-- Languages -->
+        <div class="reveal card p-6" style="background: var(--color-surface2);">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(0,212,200,0.1);">
+              <i data-lucide="code-2" class="w-5 h-5" style="color: var(--color-accent);"></i>
+            </div>
+            <h3 class="font-display font-semibold" style="color: var(--color-text);">Languages</h3>
+          </div>
+          <div id="skills-languages" class="flex flex-col gap-4"></div>
+        </div>
+
+        <!-- Frameworks + Databases -->
+        <div class="reveal card p-6" style="background: var(--color-surface2); transition-delay: 0.1s;">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(0,212,200,0.1);">
+              <i data-lucide="layers" class="w-5 h-5" style="color: var(--color-accent);"></i>
+            </div>
+            <h3 class="font-display font-semibold" style="color: var(--color-text);">Frameworks &amp; Libraries</h3>
+          </div>
+          <div id="skills-frameworks" class="flex flex-wrap gap-2"></div>
+          <div class="mt-6 pt-5" style="border-top: 1px solid var(--color-border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(0,212,200,0.1);">
+                <i data-lucide="database" class="w-5 h-5" style="color: var(--color-accent);"></i>
+              </div>
+              <h3 class="font-display font-semibold" style="color: var(--color-text);">Databases</h3>
+            </div>
+            <div id="skills-databases" class="flex flex-wrap gap-2"></div>
+          </div>
+        </div>
+
+        <!-- Tools + Soft Skills -->
+        <div class="reveal card p-6 md:col-span-2 xl:col-span-1" style="background: var(--color-surface2); transition-delay: 0.2s;">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(0,212,200,0.1);">
+              <i data-lucide="tool" class="w-5 h-5" style="color: var(--color-accent);"></i>
+            </div>
+            <h3 class="font-display font-semibold" style="color: var(--color-text);">Tools &amp; DevOps</h3>
+          </div>
+          <div id="skills-tools" class="flex flex-wrap gap-2 mb-6"></div>
+          <div class="pt-5" style="border-top: 1px solid var(--color-border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(0,212,200,0.1);">
+                <i data-lucide="users" class="w-5 h-5" style="color: var(--color-accent);"></i>
+              </div>
+              <h3 class="font-display font-semibold" style="color: var(--color-text);">Soft Skills</h3>
+            </div>
+            <div id="skills-soft" class="flex flex-wrap gap-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ EXPERIENCE ═══ -->
+  <section id="experience" class="py-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="reveal mb-16">
+        <span class="section-label flex items-center gap-2 mb-4">
+          <span style="color: var(--color-accent);">✦</span> Work Experience
+        </span>
+        <h2 class="font-display font-bold" style="font-size: clamp(2rem, 4vw, 3rem); color: var(--color-text);">Internships &amp; Training</h2>
+      </div>
+      <div id="experience-cards" class="flex flex-col lg:flex-row gap-6"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ EDUCATION ═══ -->
+  <section id="education" class="py-24 px-4 sm:px-6 lg:px-8" style="background: var(--color-surface);">
+    <div class="max-w-7xl mx-auto">
+      <div class="reveal mb-16">
+        <span class="section-label flex items-center gap-2 mb-4">
+          <span style="color: var(--color-accent);">✦</span> Education
+        </span>
+        <h2 class="font-display font-bold" style="font-size: clamp(2rem, 4vw, 3rem); color: var(--color-text);">Academic Journey</h2>
+      </div>
+      <div id="education-cards" class="flex flex-col gap-6"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ PROJECTS ═══ -->
+  <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="reveal flex items-end justify-between mb-16 flex-wrap gap-4">
+        <div>
+          <span class="section-label flex items-center gap-2 mb-4">
+            <span style="color: var(--color-accent);">✦</span> Projects
+          </span>
+          <h2 class="font-display font-bold" style="font-size: clamp(2rem, 4vw, 3rem); color: var(--color-text);">Featured Work</h2>
+        </div>
+      </div>
+      <div id="projects-list" class="flex flex-col gap-8"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ RESEARCH ═══ -->
+  <section id="research" class="py-16 px-4 sm:px-6 lg:px-8" style="background: var(--color-surface);">
+    <div class="max-w-7xl mx-auto">
+      <div class="reveal">
+        <span class="section-label flex items-center gap-2 mb-4">
+          <span style="color: var(--color-accent);">✦</span> Research &amp; Publications
+        </span>
+        <div id="research-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ CERTIFICATES ═══ -->
+  <section id="certs" class="py-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="reveal flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="section-label flex items-center gap-2 mb-4">
+            <span style="color: var(--color-accent);">✦</span> Certifications
+          </span>
+          <h2 class="font-display font-bold" style="font-size: clamp(2rem, 4vw, 3rem); color: var(--color-text);">Continuous Learning</h2>
+        </div>
+        <a id="certs-all-btn" href="./certificates/index.html" class="btn-accent">
+          <i data-lucide="award" class="w-4 h-4"></i> <span id="certs-btn-label"></span>
+        </a>
+      </div>
+      <div id="featured-certs" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ CONTACT ═══ -->
+  <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8" style="background: var(--color-surface);">
+    <div class="max-w-4xl mx-auto">
+      <div class="reveal text-center mb-16">
+        <span class="section-label flex items-center justify-center gap-2 mb-4">
+          <span style="color: var(--color-accent);">✦</span> Contact
+        </span>
+        <h2 id="contact-heading" class="font-display font-bold mb-4" style="font-size: clamp(2rem, 5vw, 3.5rem); color: var(--color-text);"></h2>
+        <p id="contact-subtext" class="text-base max-w-lg mx-auto" style="color: var(--color-muted-2);"></p>
+      </div>
+
+      <div id="contact-links" class="reveal grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12"></div>
+
+      <!-- CTA banner -->
+      <div class="reveal rounded-2xl p-8 text-center" style="background: linear-gradient(135deg, rgba(0,212,200,0.1) 0%, rgba(0,168,158,0.05) 100%); border: 1px solid rgba(0,212,200,0.2);">
+        <h3 id="cta-heading" class="font-display font-bold text-xl mb-2" style="color: var(--color-text);"></h3>
+        <p id="cta-subtext" class="text-sm mb-6" style="color: var(--color-muted-2);"></p>
+        <a id="cta-btn" href="#" class="btn-accent inline-flex">
+          <i data-lucide="send" class="w-4 h-4"></i> Send a Message
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ FOOTER ═══ -->
+  <footer class="py-10 px-4 sm:px-6 lg:px-8" style="border-top: 1px solid var(--color-border);">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <span id="footer-name" class="font-display font-semibold text-sm" style="color: var(--color-text);"></span>
+      </div>
+      <p id="footer-copyright" class="text-xs" style="color: var(--color-muted);"></p>
+      <div id="footer-socials" class="flex items-center gap-3"></div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════ JS ═══ -->
+  <script>
+    const DATA_URL = './data.json';
+
+    async function loadData() {
+      const res = await fetch(DATA_URL);
+      return res.json();
+    }
+
+    function tags(arr) {
+      return arr.map(t => `<span class="skill-tag">${t}</span>`).join('');
+    }
+
+    function render(d) {
+      const p = d.person;
+
+      // ── Meta ──
+      document.title = d.meta.title;
+      document.querySelector('meta[name="description"]').content = d.meta.description;
+
+      // ── Navbar ──
+      document.getElementById('nav-logo').textContent = p.name;
+      const desktopUl = document.getElementById('desktop-nav-links');
+      const mobileUl  = document.getElementById('mobile-nav-links');
+      d.nav.links.forEach(link => {
+        desktopUl.innerHTML += `<li><a href="${link.href}" class="nav-link px-4 py-2 rounded-lg text-sm font-medium transition-colors" style="color: var(--color-muted);">${link.label}</a></li>`;
+        mobileUl.innerHTML  += `<li><a href="${link.href}" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-sm font-medium" style="color: var(--color-muted);">${link.label}</a></li>`;
+      });
+      mobileUl.innerHTML += `<li class="pt-2 border-t" style="border-color: var(--color-border);">
+        <a href="./cv/index.html" class="btn-accent w-full justify-center"><i data-lucide="file-text" class="w-4 h-4"></i> View CV</a>
+      </li>`;
+
+      // ── Hero ──
+      document.getElementById('hero-available').textContent = p.availabilityText;
+      document.getElementById('hero-name').innerHTML = p.name.replace(' ', '<br class="sm:hidden">');
+      document.getElementById('hero-bio').textContent = d.hero.bio;
+      document.getElementById('hero-location').textContent = p.location;
+      document.getElementById('hero-tags').innerHTML = d.hero.tags.map(t => `<span class="skill-tag">${t}</span>`).join('');
+      document.getElementById('hero-stats').innerHTML = d.hero.stats.map(s => `
+        <div>
+          <div class="text-2xl font-display font-bold" style="color: var(--color-text);">${s.value}</div>
+          <div class="text-xs" style="color: var(--color-muted);">${s.label}</div>
+        </div>`).join('');
+
+      // ── Marquee ──
+      const items = d.hero.marqueeItems;
+      const marqueeSeparator = `<span style="color: var(--color-accent);">✦</span>`;
+      const marqueeRow = items.map(i => `<span class="section-label">${i}</span>${marqueeSeparator}`).join('');
+      const track = document.getElementById('marquee-track');
+      track.innerHTML = `
+        <div class="flex items-center gap-10 pr-10 whitespace-nowrap" style="color: var(--color-muted);">${marqueeRow}</div>
+        <div class="flex items-center gap-10 pr-10 whitespace-nowrap" style="color: var(--color-muted);">${marqueeRow}</div>`;
+
+      // ── About ──
+      document.getElementById('about-heading').innerHTML = d.about.heading;
+      document.getElementById('about-paragraphs').innerHTML = d.about.paragraphs.map((par, i) =>
+        `<p class="text-base leading-relaxed ${i < d.about.paragraphs.length - 1 ? 'mb-6' : 'mb-10'}" style="color: var(--color-muted-2); font-size: clamp(1rem, 1.5vw, 1.125rem);">${par}</p>`
+      ).join('');
+      document.getElementById('about-contact').innerHTML = `
+        <a href="mailto:${p.email}" class="contact-link text-sm">
+          <i data-lucide="mail" class="w-4 h-4 flex-shrink-0" style="color: var(--color-accent);"></i>${p.email}
+        </a>
+        <a href="tel:${p.phoneRaw}" class="contact-link text-sm">
+          <i data-lucide="phone" class="w-4 h-4 flex-shrink-0" style="color: var(--color-accent);"></i>${p.phone}
+        </a>
+        <a href="${p.linkedin}" target="_blank" rel="noopener" class="contact-link text-sm">
+          <i data-lucide="linkedin" class="w-4 h-4 flex-shrink-0" style="color: var(--color-accent);"></i>${p.linkedinDisplay}
+        </a>
+        <a href="${p.github}" target="_blank" rel="noopener" class="contact-link text-sm">
+          <i data-lucide="github" class="w-4 h-4 flex-shrink-0" style="color: var(--color-accent);"></i>${p.githubDisplay}
+        </a>`;
+      document.getElementById('about-highlights').innerHTML = d.about.highlights.map(h => `
+        <div class="card p-5 text-center">
+          <div class="text-2xl font-display font-bold mb-1" style="color: var(--color-accent);">${h.value}</div>
+          <div class="text-xs" style="color: var(--color-muted);">${h.label}</div>
+        </div>`).join('');
+
+      // ── Skills ──
+      document.getElementById('skills-languages').innerHTML = d.skills.languages.map(l => `
+        <div>
+          <div class="flex justify-between text-xs mb-1.5">
+            <span style="color: var(--color-muted-2);">${l.name}</span>
+            <span style="color: var(--color-accent);">${l.percent}%</span>
+          </div>
+          <div class="progress-bar"><div class="progress-bar-fill" data-width="${l.percent}"></div></div>
+        </div>`).join('');
+      document.getElementById('skills-frameworks').innerHTML = tags(d.skills.frameworks);
+      document.getElementById('skills-databases').innerHTML  = tags(d.skills.databases);
+      document.getElementById('skills-tools').innerHTML      = tags(d.skills.tools);
+      document.getElementById('skills-soft').innerHTML       = tags(d.skills.softSkills);
+
+      // ── Experience ──
+      document.getElementById('experience-cards').innerHTML = d.experience.map((exp, i) => `
+        <div class="reveal card p-8 flex-1" style="transition-delay: ${i * 0.1}s;">
+          <div class="flex items-start justify-between gap-4 mb-5">
+            <div>
+              <div class="section-label mb-2">${exp.period}</div>
+              <h3 class="font-display font-bold text-xl mb-1" style="color: var(--color-text);">${exp.role}</h3>
+              <div class="flex items-center gap-2" style="color: var(--color-accent);">
+                <i data-lucide="building-2" class="w-4 h-4"></i>
+                <span class="text-sm font-medium">${exp.company}, ${exp.location}</span>
+              </div>
+            </div>
+            <div class="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center font-display font-black text-sm" style="background: rgba(0,212,200,0.1); color: var(--color-accent);">${exp.logo}</div>
+          </div>
+          <div style="height: 1px; background: var(--color-border); margin-bottom: 1.25rem;"></div>
+          <ul class="flex flex-col gap-3">
+            ${exp.points.map(pt => `
+              <li class="flex gap-3 text-sm" style="color: var(--color-muted-2);">
+                <i data-lucide="check-circle" class="w-4 h-4 flex-shrink-0 mt-0.5" style="color: var(--color-accent);"></i>
+                ${pt}
+              </li>`).join('')}
+          </ul>
+          <div class="flex flex-wrap gap-2 mt-6">${tags(exp.tags)}</div>
+        </div>`).join('');
+
+      // ── Education ──
+      document.getElementById('education-cards').innerHTML = d.education.map((edu, i) => `
+        <div class="reveal card p-8" style="background: var(--color-surface2); transition-delay: ${i * 0.1}s;">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="flex items-start gap-5">
+              <div class="w-14 h-14 rounded-2xl flex-shrink-0 flex items-center justify-center" style="background: rgba(0,212,200,0.1);">
+                <i data-lucide="${edu.icon}" class="w-7 h-7" style="color: var(--color-accent);"></i>
+              </div>
+              <div>
+                <div class="section-label mb-1">${edu.period}</div>
+                <h3 class="font-display font-bold text-lg mb-1" style="color: var(--color-text);">${edu.degree}</h3>
+                ${edu.specialization ? `<p class="text-sm mb-1" style="color: var(--color-muted-2);">Specialization: ${edu.specialization}</p>` : ''}
+                <p class="text-sm" style="color: var(--color-muted);">${edu.institution}</p>
+              </div>
+            </div>
+            <div class="sm:text-right flex-shrink-0">
+              <div class="text-3xl font-display font-black" style="color: var(--color-accent);">${edu.score}</div>
+              <div class="text-xs" style="color: var(--color-muted);">${edu.scoreLabel}</div>
+            </div>
+          </div>
+        </div>`).join('');
+
+      // ── Projects ──
+      document.getElementById('projects-list').innerHTML = d.projects.map((proj, i) => `
+        <div class="reveal card p-8 group" style="background: var(--color-surface); transition-delay: ${i * 0.1}s;">
+          <div class="flex flex-col lg:flex-row gap-8">
+            <div class="flex-shrink-0 lg:w-20">
+              <div class="text-6xl font-display font-black leading-none" style="color: var(--color-surface2);">${proj.number}</div>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                <div>
+                  <div class="section-label mb-2">${proj.year} — ${proj.category}</div>
+                  <h3 class="font-display font-bold text-2xl" style="color: var(--color-text);">${proj.title}</h3>
+                  <p class="text-sm font-medium" style="color: var(--color-accent);">${proj.subtitle}</p>
+                </div>
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center transition-colors" style="background: rgba(0,212,200,0.1);">
+                  <i data-lucide="${proj.icon}" class="w-5 h-5" style="color: var(--color-accent);"></i>
+                </div>
+              </div>
+              <div style="height: 1px; background: var(--color-border); margin-bottom: 1.25rem;"></div>
+              <p class="text-sm leading-relaxed mb-5" style="color: var(--color-muted-2);">${proj.description}</p>
+              <ul class="flex flex-col gap-2 mb-6">
+                ${proj.points.map(pt => `
+                  <li class="flex gap-3 text-sm" style="color: var(--color-muted-2);">
+                    <i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 mt-0.5" style="color: var(--color-accent);"></i>
+                    ${pt}
+                  </li>`).join('')}
+              </ul>
+              <div class="flex flex-wrap gap-2">${tags(proj.tags)}</div>
+            </div>
+          </div>
+        </div>`).join('');
+
+      // ── Research ──
+      document.getElementById('research-list').innerHTML = d.research.map(r => `
+        <div class="card p-8 flex flex-col sm:flex-row gap-6 items-start" style="background: var(--color-surface2);">
+          <div class="w-14 h-14 rounded-2xl flex-shrink-0 flex items-center justify-center" style="background: rgba(0,212,200,0.1);">
+            <i data-lucide="file-text" class="w-7 h-7" style="color: var(--color-accent);"></i>
+          </div>
+          <div class="flex-1">
+            <div class="section-label mb-2">${r.label}</div>
+            <h3 class="font-display font-bold text-xl mb-2" style="color: var(--color-text);">${r.title}</h3>
+            <p class="text-sm leading-relaxed" style="color: var(--color-muted-2);">${r.description}</p>
+          </div>
+          <div class="flex-shrink-0">
+            <span class="px-3 py-1 rounded-full text-xs font-semibold" style="background: rgba(0,212,200,0.15); color: var(--color-accent);">${r.status}</span>
+          </div>
+        </div>`).join('');
+
+      // ── Featured Certificates ──
+      const iconMap = { cpu: 'cpu', sparkles: 'sparkles', database: 'database', smartphone: 'smartphone' };
+      document.getElementById('certs-btn-label').textContent = `View All ${d.certificates.totalCount} Certificates`;
+      document.getElementById('featured-certs').innerHTML = d.featuredCertificates.map((cert, i) => `
+        <div class="reveal card p-5" style="transition-delay: ${i * 0.05}s;">
+          <div class="w-10 h-10 rounded-lg mb-4 flex items-center justify-center" style="background: rgba(0,212,200,0.1);">
+            <i data-lucide="${cert.icon}" class="w-5 h-5" style="color: var(--color-accent);"></i>
+          </div>
+          <div class="section-label mb-1">${cert.org}</div>
+          <h4 class="font-display font-semibold text-sm mb-1" style="color: var(--color-text);">${cert.title}</h4>
+          <p class="text-xs" style="color: var(--color-muted);">${cert.description}</p>
+        </div>`).join('');
+
+      // ── Contact ──
+      document.getElementById('contact-heading').textContent = d.contact.heading;
+      document.getElementById('contact-subtext').textContent  = d.contact.subtext;
+      document.getElementById('cta-heading').textContent      = d.contact.ctaHeading;
+      document.getElementById('cta-subtext').textContent      = d.contact.ctaSubtext;
+      document.getElementById('cta-btn').href = `mailto:${p.email}`;
+      document.getElementById('contact-links').innerHTML = `
+        <a href="mailto:${p.email}" class="contact-link">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(0,212,200,0.1);">
+            <i data-lucide="mail" class="w-5 h-5" style="color: var(--color-accent);"></i>
+          </div>
+          <div>
+            <div class="text-xs mb-0.5" style="color: var(--color-muted);">Email</div>
+            <div class="text-sm font-medium" style="color: var(--color-text);">${p.email}</div>
+          </div>
+          <i data-lucide="arrow-right" class="w-4 h-4 ml-auto" style="color: var(--color-muted);"></i>
+        </a>
+        <a href="tel:${p.phoneRaw}" class="contact-link">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(0,212,200,0.1);">
+            <i data-lucide="phone" class="w-5 h-5" style="color: var(--color-accent);"></i>
+          </div>
+          <div>
+            <div class="text-xs mb-0.5" style="color: var(--color-muted);">Phone</div>
+            <div class="text-sm font-medium" style="color: var(--color-text);">${p.phone}</div>
+          </div>
+          <i data-lucide="arrow-right" class="w-4 h-4 ml-auto" style="color: var(--color-muted);"></i>
+        </a>
+        <a href="${p.linkedin}" target="_blank" rel="noopener" class="contact-link">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(0,212,200,0.1);">
+            <i data-lucide="linkedin" class="w-5 h-5" style="color: var(--color-accent);"></i>
+          </div>
+          <div>
+            <div class="text-xs mb-0.5" style="color: var(--color-muted);">LinkedIn</div>
+            <div class="text-sm font-medium" style="color: var(--color-text);">${p.linkedinDisplay}</div>
+          </div>
+          <i data-lucide="arrow-right" class="w-4 h-4 ml-auto" style="color: var(--color-muted);"></i>
+        </a>
+        <a href="${p.github}" target="_blank" rel="noopener" class="contact-link">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(0,212,200,0.1);">
+            <i data-lucide="github" class="w-5 h-5" style="color: var(--color-accent);"></i>
+          </div>
+          <div>
+            <div class="text-xs mb-0.5" style="color: var(--color-muted);">GitHub</div>
+            <div class="text-sm font-medium" style="color: var(--color-text);">${p.githubDisplay}</div>
+          </div>
+          <i data-lucide="arrow-right" class="w-4 h-4 ml-auto" style="color: var(--color-muted);"></i>
+        </a>`;
+
+      // ── Footer ──
+      document.getElementById('footer-name').textContent      = p.fullName;
+      document.getElementById('footer-copyright').textContent = d.meta.copyright;
+      document.getElementById('footer-socials').innerHTML = `
+        <a href="${p.linkedin}" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center transition-colors" style="background: var(--color-surface2); color: var(--color-muted);" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='var(--color-muted)'">
+          <i data-lucide="linkedin" class="w-4 h-4"></i>
+        </a>
+        <a href="${p.github}" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center transition-colors" style="background: var(--color-surface2); color: var(--color-muted);" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='var(--color-muted)'">
+          <i data-lucide="github" class="w-4 h-4"></i>
+        </a>
+        <a href="mailto:${p.email}" class="w-9 h-9 rounded-lg flex items-center justify-center transition-colors" style="background: var(--color-surface2); color: var(--color-muted);" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='var(--color-muted)'">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+        </a>`;
+
+      // Re-init icons after DOM injection
+      lucide.createIcons();
+
+      // ── Navbar scroll effect ──
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+
+      // ── Mobile nav toggle ──
+      const hamburger = document.getElementById('hamburger');
+      const mobileNav = document.getElementById('mobile-nav');
+      hamburger.addEventListener('click', () => {
+        const isOpen = mobileNav.classList.contains('open');
+        mobileNav.classList.toggle('hidden', isOpen);
+        mobileNav.classList.toggle('open', !isOpen);
+        hamburger.querySelector('i').setAttribute('data-lucide', isOpen ? 'menu' : 'x');
+        lucide.createIcons();
+      });
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileNav.classList.add('hidden');
+          mobileNav.classList.remove('open');
+          hamburger.querySelector('i').setAttribute('data-lucide', 'menu');
+          lucide.createIcons();
+        });
+      });
+
+      // ── Active nav link ──
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const observerNav = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+              link.style.color = link.getAttribute('href') === '#' + entry.target.id
+                ? 'var(--color-accent)'
+                : 'var(--color-muted)';
+            });
+          }
+        });
+      }, { threshold: 0.4 });
+      sections.forEach(s => observerNav.observe(s));
+
+      // ── Scroll reveal ──
+      const revealEls = document.querySelectorAll('.reveal, .reveal-left');
+      const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealEls.forEach(el => revealObs.observe(el));
+
+      // ── Progress bars ──
+      const barObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.progress-bar-fill').forEach(fill => {
+              fill.style.width = fill.dataset.width + '%';
+              fill.classList.add('animated');
+            });
+            barObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      document.querySelectorAll('#skills .card').forEach(card => barObs.observe(card));
+    }
+
+    loadData().then(render).catch(err => console.error('Failed to load data.json:', err));
+  </script>
+</body>
+</html>
